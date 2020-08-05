@@ -88,7 +88,7 @@ app.post('/login', (req, res) => {
 })
 
 
-app.get('/all', isAdmin, async (req, res) => {
+app.get('/all', async (req, res) => {
 
     try {
         let users = await User.find({ role: "user" });

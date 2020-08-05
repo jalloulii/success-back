@@ -13,7 +13,7 @@ const multipartMiddleware = multipart({
 });
 const app = express();
 
-let port = process.env.PORT || 5000 ;
+
 
 app.use(bodyParser.json());
 // dossier public ywali accesible
@@ -77,4 +77,6 @@ app.get('/api/upload', multipartMiddleware, (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+let port = process.env.PORT || 3000;
+app.listen(port, () => console.log("server started !!")) 
