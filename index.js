@@ -25,7 +25,7 @@ app.use('/euser', userController);
 app.use('/eadmin', adminController);
 app.use('/eprof', profController);
 app.use('/ecourse', courseController);
-
+let port = process.env.PORT || 3000;
 
 app.patch('/update-formPROFILE/:idUser', multipartMiddleware, (req, res) => {
 
@@ -71,12 +71,8 @@ app.patch('/update-formPROFILE/:idUser', multipartMiddleware, (req, res) => {
 
 })
 
-app.get('/api/upload', multipartMiddleware, (req, res) => {
-    res.json({
-        'message': 'File uploaded succesfully.'
-    });
-});
 
 
-let port = process.env.PORT || 3000;
+
+
 app.listen(port, () => console.log("server started !!")) 
